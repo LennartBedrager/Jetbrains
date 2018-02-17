@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CA1</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #cent {
+            position: absolute;
+            top: 70%;
+            left: 54%;
+            margin-top: -50px;
+            /* this is half the height of your div*/
+            margin-left: -100px;
+            /*this is half of width of your div*/
+        }
+
+        #container {
+            width: 226px;
+            height: 274px;
+            border: 3px solid darkblue;
+            margin: auto
+        }
+
+        .button {
+            width: 49px;
+            height: 50px;
+        }
+
+        .t1,
+        .t4 {
+            border: 1px solid black;
+            height: 48px;
+            margin-left: 3px;
+            margin-top: 3px;
+            display: inline-block;
+            text-align: center;
+            line-height: 48px;
+        }
+
+        .t1 {
+            width: 48px;
+        }
+
+        .t4 {
+            width: 219px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 text>Page 1</h1>
+
+    <div id="container">
+        <div id="display" class="t4"></div>
+        <div id="buttons">
+            <div class="t1">
+                <button class="button" value="7" onclick="addNumbers(this.value)">7</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="8" onclick="addNumbers(this.value)">8</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="9" onclick="addNumbers(this.value)">9</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="/" onclick="addNumbers(this.value)">/</button>
+            </div>
+
+            <div class="t1">
+                <button class="button" value="4" onclick="addNumbers(this.value)">4</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="5" onclick="addNumbers(this.value)">5</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="6" onclick="addNumbers(this.value)">6</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="*" onclick="addNumbers(this.value)">*</button>
+            </div>
+
+            <div class="t1">
+                <button class="button" value="1" onclick="addNumbers(this.value)">1</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="2" onclick="addNumbers(this.value)">2</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="3" onclick="addNumbers(this.value)">3</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="-" onclick="addNumbers(this.value)">-</button>
+            </div>
+
+            <div class="t1">
+                <button class="button" value="0" onclick="addNumbers(this.value)">0</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="." onclick="addNumbers(this.value)">.</button>
+            </div>
+            <div class="t1">
+                <button class="button" value="+" onclick="addNumbers(this.value)">+</button>
+            </div>
+            <div id="calculate" class="t1">
+                <button class="button" value="=" onclick="calculate(document.getElementById('display').value)">=</button>
+            </div>
+        </div>
+    </div>
+    <div id="cent">
+        <a href="index.html">Back to index</a>
+    </div>
+
+</body>
+<script>
+    document.getElementById("display").value = 0;
+
+    function addNumbers(buttonValue) {
+        document.getElementById('display').value += buttonValue;
+        document.getElementById('display').innerHTML += buttonValue;
+    }
+
+    function calculate(equation) {
+        var answer = eval(equation);
+        console.log(answer);
+        document.getElementById('display').value = answer;
+        document.getElementById('display').innerHTML = answer;
+    }
+</script>
+
+</html>
